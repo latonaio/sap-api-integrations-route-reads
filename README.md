@@ -73,7 +73,7 @@ accepter における データ種別 の指定に基づいて SAP_API_Caller �
 caller.go の func() 毎 の 以下の箇所が、指定された API をコールするソースコードです。  
 
 ```
-func (c *SAPAPICaller) AsyncGetRoute(iD, RouteID string, accepter []string) {
+func (c *SAPAPICaller) AsyncGetRoute(iD, accountID, partyID string, accepter []string) {
 	wg := &sync.WaitGroup{}
 	wg.Add(len(accepter))
 	for _, fn := range accepter {
@@ -85,12 +85,12 @@ func (c *SAPAPICaller) AsyncGetRoute(iD, RouteID string, accepter []string) {
 			}()
 		case "RouteAccountCollection":
 			func() {
-				c.RouteAccountCollection(RouteID)
+				c.RouteAccountCollection(accountID)
 				wg.Done()
 			}()
 		case "RouteInvolvedPartiesCollection":
 			func() {
-				c.RouteInvolvedPartiesCollection(PartyID)
+				c.RouteInvolvedPartiesCollection(partyID)
 				wg.Done()
 			}()
 		default:
