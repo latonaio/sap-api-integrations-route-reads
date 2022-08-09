@@ -6,7 +6,7 @@
 	"RouteCollection": {
         "ObjectID": "",
         "ETag": "",
-        "ID": "11",
+        "ID": "",
         "Name": "",
         "RouteTypeCode": "",
         "RouteTypeCodeText": "",
@@ -46,7 +46,7 @@
 			"ParentObjectID": "",
 			"ETag": "",
 			"RouteID": "",
-			"AccountID": "",
+			"AccountID": "30007",
 			"AccountUUID": "",
 			"AllDayEvent": false,
 			"DayNumber": 1,
@@ -60,7 +60,7 @@
 			"VisitTypeCodeText": "",
 			"VisitUUID": null,
 			"VisitID": "",
-			"RouteInvolvedPartiesCollection": {
+			"RouteInvolvedParties": {
 				"ObjectID": "",
 				"ParentObjectID": "",
 				"ETag": "",
@@ -77,11 +77,11 @@
 				"Email": "",
 				"FormattedPhoneNumberDescription": "",
 				"Route": ""
-			}	
-		}
+		    }
+		}	
 	},
-	"api_schema": "RouteCollection",
-	"accepter": ["RouteCollection"],
-	"route_code": "11",
+	"api_schema": "RouteRouteAccountCollection",
+	"accepter": ["RouteAccountCollection"],
+	"route_code": "",
 	"deleted": false
 }

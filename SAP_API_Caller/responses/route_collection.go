@@ -1,14 +1,13 @@
 package responses
-
+ 
 type RouteCollection struct {
 	D struct {
 		Results []struct {
 			Metadata struct {
-				URI  string `json:"uri"`
 				Type string `json:"type"`
 				Etag string `json:"etag"`
 			} `json:"__metadata"`
-			ObjectID                    string `json:"ObjectID"`
+	     	ObjectID                    string `json:"ObjectID"`
 			ETag                        string `json:"ETag"`
 			ID                          string `json:"ID"`
 			Name                        string `json:"Name"`
@@ -45,6 +44,6 @@ type RouteCollection struct {
 			EndDate                     string `json:"EndDate"`
 			WorkingDayCalendarCode      string `json:"WorkingDayCalendarCode"`
 			WorkingDayCalendarCodeText  string `json:"WorkingDayCalendarCodeText"`
-		} `json:"results"`
-	} `json:"d"`
+} `json:"results"`
+} `json:"d"`
 }

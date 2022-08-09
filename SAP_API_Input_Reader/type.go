@@ -95,6 +95,44 @@ type SDC struct {
 		EndDate                     string `json:"EndDate"`
 		WorkingDayCalendarCode      string `json:"WorkingDayCalendarCode"`
 		WorkingDayCalendarCodeText  string `json:"WorkingDayCalendarCodeText"`
+		RouteAccountCollection      struct {
+			ObjectID                       string `json:"ObjectID"`
+			ParentObjectID                 string `json:"ParentObjectID"`
+			ETag                           string `json:"ETag"`
+			RouteID                        string `json:"RouteID"`
+			AccountID                      string `json:"AccountID"`
+			AccountUUID                    string `json:"AccountUUID"`
+			AllDayEvent                    bool   `json:"AllDayEvent"`
+			DayNumber                      int    `json:"DayNumber"`
+			DriveTime                      string `json:"DriveTime"`
+			Duration                       string `json:"Duration"`
+			EndTime                        string `json:"EndTime"`
+			StartTime                      string `json:"StartTime"`
+			PreparationTime                string `json:"PreparationTime"`
+			VisitDate                      string `json:"VisitDate"`
+			VisitTypeCode                  string `json:"VisitTypeCode"`
+			VisitTypeCodeText              string `json:"VisitTypeCodeText"`
+			VisitUUID                      string `json:"VisitUUID"`
+			VisitID                        string `json:"VisitID"`
+			RouteInvolvedPartiesCollection struct {
+				ObjectID                        string `json:"ObjectID"`
+				ParentObjectID                  string `json:"ParentObjectID"`
+				ETag                            string `json:"ETag"`
+				RouteID                         string `json:"RouteID"`
+				PartyID                         string `json:"PartyID"`
+				PartyName                       string `json:"PartyName"`
+				RoleCode                        string `json:"RoleCode"`
+				RoleCodeText                    string `json:"RoleCodeText"`
+				RoleCategoryCode                string `json:"RoleCategoryCode"`
+				RoleCategoryCodeText            string `json:"RoleCategoryCodeText"`
+				PartyTypeCode                   string `json:"PartyTypeCode"`
+				PartyTypeCodeText               string `json:"PartyTypeCodeText"`
+				Address                         string `json:"Address"`
+				Email                           string `json:"Email"`
+				FormattedPhoneNumberDescription string `json:"FormattedPhoneNumberDescription"`
+				Route                           string `json:"Route"`
+			} `json:"RouteInvolvedPartiesCollection"`
+		} `json:"RouteAccountCollection"`
 	} `json:"RouteCollection"`
 	APISchema string   `json:"api_schema"`
 	Accepter  []string `json:"accepter"`

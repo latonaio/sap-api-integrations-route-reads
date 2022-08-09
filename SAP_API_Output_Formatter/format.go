@@ -68,3 +68,83 @@ func ConvertToRouteCollection(raw []byte, l *logger.Logger) ([]RouteCollection, 
 
 	return routeCollection, nil
 }
+
+func ConvertToRouteAccountCollection(raw []byte, l *logger.Logger) ([]RouteAccountCollection, error) {
+	pm := &responses.RouteAccountCollection{}
+
+	err := json.Unmarshal(raw, pm)
+	if err != nil {
+		return nil, xerrors.Errorf("cannot convert to RouteAccountCollection. unmarshal error: %w", err)
+	}
+	if len(pm.D.Results) == 0 {
+		return nil, xerrors.New("Result data is not exist")
+	}
+	if len(pm.D.Results) > 10 {
+		l.Info("raw data has too many Results. %d Results exist. show the first 10 of Results array", len(pm.D.Results))
+	}
+
+	routeAccountCollection := make([]RouteAccountCollection, 0, 10)
+	for i := 0; i < 10 && i < len(pm.D.Results); i++ {
+		data := pm.D.Results[i]
+		routeAccountCollection = append(routeAccountCollection, RouteAccountCollection{
+			ObjectID:          data.ObjectID,
+			ParentObjectID:    data.ParentObjectID,
+			ETag:              data.ETag,
+			RouteID:           data.RouteID,
+			AccountID:         data.AccountID,
+			AccountUUID:       data.AccountUUID,
+			AllDayEvent:       data.AllDayEvent,
+			DayNumber:         data.DayNumber,
+			DriveTime:         data.DriveTime,
+			Duration:          data.Duration,
+			EndTime:           data.EndTime,
+			StartTime:         data.StartTime,
+			PreparationTime:   data.PreparationTime,
+			VisitDate:         data.VisitDate,
+			VisitTypeCode:     data.VisitTypeCode,
+			VisitTypeCodeText: data.VisitTypeCodeText,
+			VisitUUID:         data.VisitUUID,
+			VisitID:           data.VisitID,
+		})
+	}
+
+	return routeAccountCollection, nil
+}
+
+func ConvertToRouteInvolvedPartiesCollection(raw []byte, l *logger.Logger) ([]RouteInvolvedPartiesCollection, error) {
+	pm := &responses.RouteInvolvedPartiesCollection{}
+
+	err := json.Unmarshal(raw, pm)
+	if err != nil {
+		return nil, xerrors.Errorf("cannot convert to RouteInvolvedPartiesCollection. unmarshal error: %w", err)
+	}
+	if len(pm.D.Results) == 0 {
+		return nil, xerrors.New("Result data is not exist")
+	}
+	if len(pm.D.Results) > 10 {
+		l.Info("raw data has too many Results. %d Results exist. show the first 10 of Results array", len(pm.D.Results))
+	}
+
+	routeInvolvedPartiesCollection := make([]RouteInvolvedPartiesCollection, 0, 10)
+	for i := 0; i < 10 && i < len(pm.D.Results); i++ {
+		data := pm.D.Results[i]
+		routeInvolvedPartiesCollection = append(routeInvolvedPartiesCollection, RouteInvolvedPartiesCollection{
+			ObjectID:                        data.ObjectID,
+			ParentObjectID:                  data.ParentObjectID,
+			ETag:                            data.ETag,
+			RouteID:                         data.RouteID,
+			PartyName:                       data.PartyName,
+			RoleCode:                        data.RoleCode,
+			RoleCodeText:                    data.RoleCodeText,
+			RoleCategoryCode:                data.RoleCategoryCode,
+			RoleCategoryCodeText:            data.RoleCategoryCodeText,
+			PartyTypeCode:                   data.PartyTypeCode,
+			PartyTypeCodeText:               data.PartyTypeCodeText,
+			Address:                         data.Address,
+			Email:                           data.Email,
+			FormattedPhoneNumberDescription: data.FormattedPhoneNumberDescription,
+		})
+	}
+
+	return routeInvolvedPartiesCollection, nil
+}

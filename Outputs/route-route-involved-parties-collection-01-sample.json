@@ -1,0 +1,42 @@
+{
+	"cursor": "/Users/latona2/bitbucket/sap-api-integrations-route-reads/SAP_API_Caller/caller.go#L125",
+	"function": "sap-api-integrations-route-reads/SAP_API_Caller.(*SAPAPICaller).RouteInvolvedPartiesCollection",
+	"level": "INFO",
+	"message": [
+		{
+			"ObjectID": "00163E05A2E01EE4B2FD24CDFBE32C07",
+			"ParentObjectID": "00163E05A2E01EE4B2FD0B2BAC14CB9D",
+			"ETag": "2015-07-14T05:42:19+09:00",
+			"RouteID": "11",
+			"PartyID": "",
+			"PartyName": "Harald Berger",
+			"RoleCode": "35",
+			"RoleCodeText": "Organizer",
+			"RoleCategoryCode": "35",
+			"RoleCategoryCodeText": "Organizer Party",
+			"PartyTypeCode": "167",
+			"PartyTypeCodeText": "Employee",
+			"Address": "00163E03-A070-1EE2-88BA-3BBEB15CB0C5",
+			"Email": "DESalesOps@ondemand.com",
+			"FormattedPhoneNumberDescription": "+49 (511) 9369-010"
+		},
+		{
+			"ObjectID": "00163E05A2E01EE4B2FD259919834C07",
+			"ParentObjectID": "00163E05A2E01EE4B2FD0B2BAC14CB9D",
+			"ETag": "2015-07-14T05:42:19+09:00",
+			"RouteID": "11",
+			"PartyID": "",
+			"PartyName": "Harald Berger",
+			"RoleCode": "39",
+			"RoleCodeText": "Owner",
+			"RoleCategoryCode": "39",
+			"RoleCategoryCodeText": "Employee Responsible Party",
+			"PartyTypeCode": "167",
+			"PartyTypeCodeText": "Employee",
+			"Address": "00163E03-A070-1EE2-88BA-3BBEB15CB0C5",
+			"Email": "DESalesOps@ondemand.com",
+			"FormattedPhoneNumberDescription": "+49 (511) 9369-010"
+		}
+	],
+	"time": "2022-08-09T12:55:21+09:00"
+}

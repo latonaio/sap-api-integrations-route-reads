@@ -10,7 +10,7 @@ import (
 func main() {
 	l := logger.NewLogger()
 	fr := sap_api_input_reader.NewFileReader()
-	inoutSDC := fr.ReadSDC("./Inputs/SDC_Route_Route_Collection_sample.json")
+	inoutSDC := fr.ReadSDC("./Inputs/SDC_Route_Route_Involved_Parties_Collection_sample.json")
 	caller := sap_api_caller.NewSAPAPICaller(
 		"https://sandbox.api.sap.com/sap/c4c/odata/v1/", l,
 	)
@@ -18,12 +18,14 @@ func main() {
 	accepter := inoutSDC.Accepter
 	if len(accepter) == 0 || accepter[0] == "All" {
 		accepter = []string{
-			"RouteCollection",
+			"RouteCollection", "RouteAccountCollection", "RouteInvolvedPartiesCollection",
 		}
 	}
 
 	caller.AsyncGetRoute(
 		inoutSDC.RouteCollection.ID,
+		inoutSDC.RouteCollection.RouteAccountCollection.AccountID,
+		inoutSDC.RouteCollection.RouteAccountCollection.RouteInvolvedPartiesCollection.PartyID,
 		accepter,
 	)
 }

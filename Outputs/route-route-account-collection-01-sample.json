@@ -1,0 +1,28 @@
+{
+	"cursor": "/Users/latona2/bitbucket/sap-api-integrations-route-reads/SAP_API_Caller/caller.go#L94",
+	"function": "sap-api-integrations-route-reads/SAP_API_Caller.(*SAPAPICaller).RouteAccountCollection",
+	"level": "INFO",
+	"message": [
+		{
+			"ObjectID": "00163E05A2E01EE4B2FD0E7D5D5F8B9E",
+			"ParentObjectID": "00163E05A2E01EE4B2FD0B2BAC14CB9D",
+			"ETag": "2015-07-14T05:42:19+09:00",
+			"RouteID": "11",
+			"AccountID": "30007",
+			"AccountUUID": "00163E05-A2E0-1ED4-B1FE-45C4E1740F76",
+			"AllDayEvent": false,
+			"DayNumber": 1,
+			"DriveTime": "",
+			"Duration": "PT1H",
+			"EndTime": "PT09H00M00S",
+			"StartTime": "PT08H00M00S",
+			"PreparationTime": "PT1H",
+			"VisitDate": "",
+			"VisitTypeCode": "",
+			"VisitTypeCodeText": "",
+			"VisitUUID": "",
+			"VisitID": ""
+		}
+	],
+	"time": "2022-08-09T12:53:54+09:00"
+}

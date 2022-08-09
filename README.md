@@ -25,6 +25,8 @@ sap-api-integrations-route-reads が対応する APIサービス は、次のも
 sap-api-integrations-route-reads には、次の API をコールするためのリソースが含まれています。  
 
 * RouteCollection（SAP ルート - ルート）
+* RouteAccountCollection（SAP ルート - ルートアカウント）
+* RouteInvolvedPartiesCollection（SAP ルート - 関係者）
 
 
 ## API への 値入力条件 の 初期値
@@ -33,6 +35,9 @@ sap-api-integrations-route-reads において、API への値入力条件の初�
 ### SDC レイアウト
 
 * inoutSDC.RouteCollection.ID（ID）
+* inoutSDC.RouteAccountCollection.RouteID（ルートID）
+* inoutSDC.RouteInvolvedPartiesCollection.PartyID（関係者ID）
+
 
 ## SAP API Bussiness Hub の API の選択的コール
 
@@ -68,7 +73,7 @@ accepter における データ種別 の指定に基づいて SAP_API_Caller �
 caller.go の func() 毎 の 以下の箇所が、指定された API をコールするソースコードです。  
 
 ```
-func (c *SAPAPICaller) AsyncGetRoute(iD string, accepter []string) {
+func (c *SAPAPICaller) AsyncGetRoute(iD, RouteID string, accepter []string) {
 	wg := &sync.WaitGroup{}
 	wg.Add(len(accepter))
 	for _, fn := range accepter {
@@ -76,6 +81,16 @@ func (c *SAPAPICaller) AsyncGetRoute(iD string, accepter []string) {
 		case "RouteCollection":
 			func() {
 				c.RouteCollection(iD)
+				wg.Done()
+			}()
+		case "RouteAccountCollection":
+			func() {
+				c.RouteAccountCollection(RouteID)
+				wg.Done()
+			}()
+		case "RouteInvolvedPartiesCollection":
+			func() {
+				c.RouteInvolvedPartiesCollection(PartyID)
 				wg.Done()
 			}()
 		default:

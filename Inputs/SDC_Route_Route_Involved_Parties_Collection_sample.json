@@ -6,7 +6,7 @@
 	"RouteCollection": {
         "ObjectID": "",
         "ETag": "",
-        "ID": "11",
+        "ID": "",
         "Name": "",
         "RouteTypeCode": "",
         "RouteTypeCodeText": "",
@@ -65,7 +65,7 @@
 				"ParentObjectID": "",
 				"ETag": "",
 				"RouteID": "",
-				"PartyID": "",
+				"PartyID": "8000000019",
 				"PartyName": "",
 				"RoleCode": "",
 				"RoleCodeText": "",
@@ -77,11 +77,11 @@
 				"Email": "",
 				"FormattedPhoneNumberDescription": "",
 				"Route": ""
-			}	
+			}
 		}
 	},
-	"api_schema": "RouteCollection",
-	"accepter": ["RouteCollection"],
-	"route_code": "11",
+	"api_schema": "RouteInvolvedPartiesCollection",
+	"accepter": ["RouteInvolvedPartiesCollection"],
+	"route_code": "",
 	"deleted": false
 }
