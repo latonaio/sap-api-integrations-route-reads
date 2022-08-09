@@ -23,11 +23,6 @@ type RouteInvolvedPartiesCollection struct {
 			Address                         string `json:"Address"`
 			Email                           string `json:"Email"`
 			FormattedPhoneNumberDescription string `json:"FormattedPhoneNumberDescription"`
-			Route                           struct {
-				Deferred struct {
-					URI string `json:"uri"`
-				} `json:"__deferred"`
-			} `json:"Route"`
 		} `json:"results"`
 	} `json:"d"`
 }

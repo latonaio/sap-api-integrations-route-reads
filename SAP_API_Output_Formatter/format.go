@@ -133,6 +133,7 @@ func ConvertToRouteInvolvedPartiesCollection(raw []byte, l *logger.Logger) ([]Ro
 			ParentObjectID:                  data.ParentObjectID,
 			ETag:                            data.ETag,
 			RouteID:                         data.RouteID,
+			PartyID:                         data.PartyID,
 			PartyName:                       data.PartyName,
 			RoleCode:                        data.RoleCode,
 			RoleCodeText:                    data.RoleCodeText,
